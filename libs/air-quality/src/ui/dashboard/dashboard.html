@@ -9,9 +9,10 @@
   (selectedLocationIdChanged)="onSelectedLocationIdChanged($event)"
   (reloadLocations)="onReloadLocations()" />
 
-<div class="flex flex-col md:flex-row gap-4 pb-5">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 pb-5 items-stretch">
   @if(sensors().length > 0 && chartOptions()) {
-  <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+  <div
+    class="w-full h-full p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
     <shared-chart [options]="chartOptions()" />
   </div>
   <sensors-card [sensors]="sensors()" />
