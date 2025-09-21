@@ -1,6 +1,5 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, input, output, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, input, output, viewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Dropdown as FlowbiteDropdown } from 'flowbite';
 
 @Component({
   selector: 'shared-dropdown',
@@ -9,32 +8,23 @@ import { Dropdown as FlowbiteDropdown } from 'flowbite';
   styleUrl: './dropdown.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Dropdown<T = unknown> implements AfterViewInit {
-  @ViewChild('dropdownMenu') menu!: ElementRef<HTMLElement>;
-  @ViewChild('dropdownTrigger') trigger!: ElementRef<HTMLElement>;
+export class Dropdown<T = unknown> {
+  menu = viewChild<ElementRef<HTMLElement>>('dropdownMenu');
 
   label = input<string>('');
   disabled = input<boolean>(false);
   payload = input<T[]>([]);
   clicked = output<T>();
 
-  private dropdown?: FlowbiteDropdown;
-  isOpen = false;
-
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   labelFn = input<(item: T) => string>((item: any) => item?.label ?? String(item));
 
-  ngAfterViewInit(): void {
-    this.dropdown = new FlowbiteDropdown(this.menu.nativeElement, this.trigger.nativeElement, { placement: 'bottom' });
-  }
-
-  toggleDropdown() {
-    this.dropdown?.toggle();
-    this.isOpen = !this.isOpen;
-  }
-
   onClicked(item: T) {
-    this.toggleDropdown();
+    this.menu()?.nativeElement.classList.add('hidden');
     this.clicked.emit(item);
+  }
+  
+  toggleDropdown() {
+    this.menu()?.nativeElement.classList.toggle('hidden');
   }
 }
