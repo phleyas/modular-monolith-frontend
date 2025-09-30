@@ -1,7 +1,19 @@
 import '@angular/compiler';
-import '@analogjs/vitest-angular/setup-zone';
+import '@analogjs/vitest-angular/setup-snapshots';
 
-import { BrowserTestingModule, platformBrowserTesting } from '@angular/platform-browser/testing';
+import { provideZonelessChangeDetection, NgModule } from '@angular/core';
+import {
+  BrowserTestingModule,
+  platformBrowserTesting,
+} from '@angular/platform-browser/testing';
 import { getTestBed } from '@angular/core/testing';
 
-getTestBed().initTestEnvironment(BrowserTestingModule, platformBrowserTesting());
+@NgModule({
+  providers: [provideZonelessChangeDetection()],
+})
+export class ZonelessTestModule {}
+
+getTestBed().initTestEnvironment(
+  [BrowserTestingModule, ZonelessTestModule],
+  platformBrowserTesting(),
+);
