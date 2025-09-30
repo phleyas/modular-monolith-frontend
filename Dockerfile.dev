@@ -42,4 +42,4 @@ RUN apk add --no-cache \
 ENV CHROME_BIN=/usr/bin/chromium-browser
 
 # Run tests using the npm test script
-CMD ["npm", "run", "test:headless"]
+CMD ["npm", "run", "test"]
