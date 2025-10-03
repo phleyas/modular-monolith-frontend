@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
-import { Chart, ChartBuilder, LoadingSpinner } from '@frontend/shared';
+import { Chart, LoadingSpinner } from '@frontend/shared';
 import { ApexOptions } from 'apexcharts';
 import { FormsModule } from '@angular/forms';
 import { SensorsCard } from '../sensors-card/sensors-card';
@@ -8,6 +8,7 @@ import { Store } from '@ngrx/store';
 import { locationsFeature } from '../../state/locations.reducer';
 import { sensorsFeature } from '../../state/sensors.reducer';
 import { DashboardActions } from './dashboard.actions';
+import { ChartBuilder } from './chart-builder';
 
 @Component({
   selector: 'dashboard',
@@ -35,28 +36,16 @@ export class Dashboard {
       .map(sensor => sensor.latest?.value)
       .filter((v): v is number => typeof v === 'number' && Number.isFinite(v));
 
-    const labels = sensors.map(sensor => sensor.parameter?.name ?? 'N/A');
-
-    const yAxis = sensors.map(sensor => {
-      return {
-        min: sensor.summary?.min ?? 0,
-        max: sensor.summary?.max ?? undefined,
-        show: false,
-        labels: {
-          formatter: function (value: number) {
-            return value + (sensor.parameter?.units ?? '');
-          },
-        },
-      } satisfies ApexYAxis;
-    });
+    const labels = sensors.map(sensor => `${sensor.parameter?.displayName ?? 'n/a'}`);
+    const units = sensors.map(sensor => sensor.parameter?.units || '');
 
     const builder = new ChartBuilder()
       .setChartType('radialBar')
-      .setTooltip()
-      .setLegend('bottom')
       .setSeries(series)
-      .setLabels(labels)
-      .concatYAxis(yAxis);
+      .setPlotOptions(units)
+      .setResponsive()
+      .setTheme()
+      .setLabels(labels);
 
     return builder.build();
   });
