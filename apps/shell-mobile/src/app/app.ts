@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { initFlowbite, initDropdowns } from 'flowbite';
+import { AfterViewInit, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { IonRouterOutlet, IonApp } from '@ionic/angular/standalone';
 
@@ -8,6 +9,11 @@ import { IonRouterOutlet, IonApp } from '@ionic/angular/standalone';
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App {
+export class App implements AfterViewInit {
   protected title = 'shell-mobile';
+
+  ngAfterViewInit() {
+    initFlowbite();
+    initDropdowns();
+  }
 }
