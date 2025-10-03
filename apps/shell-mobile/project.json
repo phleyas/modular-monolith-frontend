@@ -22,7 +22,16 @@
             "output": "assets"
           }
         ],
-        "styles": ["apps/shell-mobile/src/global.scss", "apps/shell-mobile/src/theme/variables.scss"]
+        "define": {
+          "API_BASE_URL": "\"https://api.ignaciokoestner.de\"",
+          "API_BASE_URL_LOCAL": "\"http://localhost:5000\"",
+          "API_BASE_URL_ANDROID_LOCAL": "\"http://10.0.2.2:5000\""
+        },
+        "styles": [
+          "apps/shell-mobile/src/styles.css",
+          "apps/shell-mobile/src/global.scss",
+          "apps/shell-mobile/src/theme/variables.scss"
+        ]
       },
       "configurations": {
         "production": {

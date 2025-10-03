@@ -13,7 +13,7 @@ export const appConfig: ApplicationConfig = {
     provideZonelessChangeDetection(),
     provideRouter(appRoutes),
     provideStore(),
-    provideApi({ basePath: 'http://localhost:5000' }),
+    provideApi({ basePath: API_BASE_URL  }),
     provideStoreDevtools({ maxAge: 25, logOnly: false }),
   ],
 };

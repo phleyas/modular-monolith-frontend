@@ -20,7 +20,8 @@
           }
         ],
         "define": {
-          "API_BASE_URL": "\"https://api.ignaciokoestner.de\""
+          "API_BASE_URL": "\"https://api.ignaciokoestner.de\"",
+          "API_BASE_URL_LOCAL": "\"http://localhost:5000\""
         },
         "styles": ["apps/shell/src/styles.css"]
       },
