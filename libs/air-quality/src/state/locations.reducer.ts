@@ -52,17 +52,12 @@ export const locationsReducer = createReducer(
       chosenLocationId: locationId,
     })
   ),
-  on(
-    DashboardActions.setCity,
-    SensorsTableActions.setCity,
-    LocationsTableActions.setCity,
-    (state, { city }) => ({
-      ...state,
-      city,
-      chosenLocationId: undefined,
-      locations: [],
-    })
-  ),
+  on(DashboardActions.setCity, SensorsTableActions.setCity, LocationsTableActions.setCity, (state, { city }) => ({
+    ...state,
+    city,
+    chosenLocationId: undefined,
+    locations: [],
+  })),
   on(
     DashboardActions.setCountry,
     SensorsTableActions.setCountry,

@@ -4,10 +4,7 @@
     "outDir": "../../dist/out-tsc",
     "types": []
   },
-  "include": [
-    "src/**/*.ts",
-    "capacitor.config.ts"
-  ],
+  "include": ["src/**/*.ts", "capacitor.config.ts"],
   "exclude": [
     "jest.config.ts",
     "src/test-setup.ts",

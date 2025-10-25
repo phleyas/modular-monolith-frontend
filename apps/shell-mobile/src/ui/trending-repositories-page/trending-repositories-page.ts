@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
-import { RepositoriesTable } from "@frontend/repositories";
+import { RepositoriesTable } from '@frontend/repositories';
 
 @Component({
   selector: 'app-trending-repositories-page',

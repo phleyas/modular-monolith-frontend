@@ -36,7 +36,7 @@ export class Dashboard {
       .map(sensor => sensor.latest?.value)
       .filter((v): v is number => typeof v === 'number' && Number.isFinite(v));
 
-    const labels = sensors.map(sensor => `${sensor.parameter?.displayName ?? 'n/a'}`);
+    const labels = sensors.map(sensor => `${sensor.parameter?.name ?? 'n/a'}`);
     const units = sensors.map(sensor => sensor.parameter?.units || '');
 
     const builder = new ChartBuilder()

@@ -13,7 +13,7 @@ export const appConfig: ApplicationConfig = {
     provideStore({ sensors: sensorsFeature.reducer, locations: locationsFeature.reducer }),
     provideEffects([LocationsEffects, SensorsEffects]),
     provideHttpClient(withFetch()),
-    provideApi({ basePath: API_BASE_URL_ANDROID_LOCAL }),
+    provideApi({ basePath: API_BASE_URL }),
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes, withPreloading(PreloadAllModules)),

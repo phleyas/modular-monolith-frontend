@@ -56,7 +56,7 @@ export class ChartBuilder {
           offsetX: -8,
           fontSize: '16px',
           formatter: function (seriesName, opts) {
-            return seriesName + ':  ' + opts.w.globals.series[opts.seriesIndex]+' ' + (units[opts.seriesIndex] || '');
+            return seriesName + ':  ' + opts.w.globals.series[opts.seriesIndex] + ' ' + (units[opts.seriesIndex] || '');
           },
         },
       },

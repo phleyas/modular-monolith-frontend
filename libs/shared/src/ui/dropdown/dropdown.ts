@@ -23,7 +23,7 @@ export class Dropdown<T = unknown> {
     this.menu()?.nativeElement.classList.add('hidden');
     this.clicked.emit(item);
   }
-  
+
   toggleDropdown() {
     this.menu()?.nativeElement.classList.toggle('hidden');
   }
