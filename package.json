@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve shell",
-    "build": "npx nx run-many --target=build --all --prod",
+    "start:shell": "nx serve shell",
+    "build:shell": "npx nx build shell --prod",
     "test": "npx nx run-many --target=test --all",
     "lint": "npx nx run-many --target=lint --all --exclude=open-api --verbose",
     "prettier": "npx prettier . --write",
