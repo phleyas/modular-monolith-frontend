@@ -22,6 +22,7 @@ export class LocationsDataService {
       );
       this.cache.set(key, obs$);
     }
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.cache.get(key)!;
   }
 
