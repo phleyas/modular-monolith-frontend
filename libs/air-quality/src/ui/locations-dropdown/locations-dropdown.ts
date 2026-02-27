@@ -41,6 +41,7 @@ export class LocationsDropdown {
 
         return {
           label: `${parts.join(', ')} [${sensorsCount}]`,
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           id: loc.id!,
         } satisfies DropdownPayload;
       })

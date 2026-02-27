@@ -1,7 +1,7 @@
 # =========================================
 # Stage 1: Build the Angular Application
 # =========================================
-ARG NODE_VERSION=22.14.0-alpine
+ARG NODE_VERSION=24-alpine
 ARG NGINX_VERSION=alpine3.21
 
 
