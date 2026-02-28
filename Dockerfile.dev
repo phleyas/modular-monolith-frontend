@@ -20,8 +20,6 @@ COPY package.json package-lock.json ./
 # Install dependencies using npm with caching to speed up subsequent builds
 RUN --mount=type=cache,target=/root/.npm npm ci
 
-# Create a safe npm cache inside the container
-RUN npm ci
 # Copy all application source files into the container
 COPY . .
 

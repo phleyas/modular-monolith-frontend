@@ -9,7 +9,13 @@ export default [
   ...nx.configs['flat/javascript'],
   ...angular.configs.tsRecommended,
   {
-    ignores: ['**/dist', '**/vite.config.*.timestamp*', '**/vitest.config.*.timestamp*'],
+    ignores: [
+      '**/dist',
+      '**/vite.config.*.timestamp*',
+      '**/vitest.config.*.timestamp*',
+      'apps/shell-mobile/android',
+      'libs/open-api/src',
+    ],
   },
   ...tseslint.configs.recommended.map(cfg => ({
     files: ['**/*.ts', '**/*.tsx'],

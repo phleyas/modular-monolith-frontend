@@ -2,16 +2,16 @@
   "name": "@frontend/repositories",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "20.3.0",
-    "@angular/core": "20.3.0",
+    "@angular/common": "21.0.0",
+    "@angular/core": "21.0.0",
     "rxjs": "7.8.0",
-    "@nx/angular": "21.5.2",
+    "@nx/angular": "22.5.3",
     "vite": "6.3.6",
-    "@analogjs/vite-plugin-angular": "1.21.0",
-    "@nx/vite": "21.5.2",
-    "@angular/cdk": "20.2.4",
+    "@analogjs/vite-plugin-angular": "2.3.0",
+    "@nx/vite": "22.5.3",
+    "@angular/cdk": "21.0.0",
     "@frontend/shared": "0.0.1",
-    "@ngrx/signals": "20.0.1"
+    "@ngrx/signals": "21.0.0"
   },
   "sideEffects": false
 }
