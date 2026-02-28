@@ -2,7 +2,7 @@
 # Stage 1: Build the Angular Application
 # =========================================
 ARG NODE_VERSION=24-alpine
-ARG NGINX_VERSION=alpine3.21
+ARG NGINX_VERSION=1.28.0-alpine3.21
 
 
 # Use a lightweight Node.js image for building (customizable via ARG)
